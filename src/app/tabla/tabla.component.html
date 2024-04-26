@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas">
+      <td>{{ persona.nombre }}</td>
+      <td>{{ persona.edad }}</td>
+      <td><button (click)="editar(persona)">Editar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="personaEditando">
+  <h2>Editar Persona</h2>
+  <form (submit)="guardarEdicion()">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="personaEditando.nombre" name="nombre" required><br>
+    <label>Edad:</label>
+    <input type="number" [(ngModel)]="personaEditando.edad" name="edad" required><br>
+    <button type="submit">Guardar</button>
+  </form>
+</div>

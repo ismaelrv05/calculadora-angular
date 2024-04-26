@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-calculator',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CalculatorComponent {
     pantalla: string = '0';
+    historial: string[] = [' '];
+
+
 
     agregarNumero(numero: number) {
         if (this.pantalla === '0' || this.pantalla === 'ERROR')
@@ -41,8 +45,16 @@ export class CalculatorComponent {
         try {
             let res = eval(this.pantalla);
             this.pantalla = res.toString();
+            this.historial.unshift(res.toString());
+
         } catch {
             this.pantalla = "ERROR";
+            this.historial.unshift("ERROR");
           }
+      }
+
+
+      limpiar(){
+        this.historial = [''];
       }
   }

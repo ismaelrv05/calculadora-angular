@@ -1,4 +1,5 @@
-<div class="calculator">
+<div class="contenido">
+<div class="calculadora">
   <div class="screen" id="screen_res">{{ pantalla }}</div>
 
   <button class="bt" id="delete" (click)="borrarPantalla()">C</button>
@@ -21,3 +22,7 @@
   <button class="bt" id="number" value="." (click)="agregarPunto()">.</button>
   <button class="bt" id="equal" value="=" (click)="calcularResultado()">=</button>
 </div>
+<!-- <app-sidebar [historial]="historial"></app-sidebar> -->
+<app-historial [historial]="historial" (limpiarHistorial)="limpiar()"></app-historial>
+</div>
+

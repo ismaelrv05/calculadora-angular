@@ -1,0 +1,13 @@
+<aside class="aside-box" id="lateral">
+  <h2>Registro/Historial</h2>
+  <div *ngIf="!mostrarHistorial; else mostrarHistorialTemplate">
+    <button (click)="mostrarOcultarHistorial()">Mostrar historial</button>
+  </div>
+  <ng-template #mostrarHistorialTemplate>
+    <div id="result" class="result-content">
+      <a *ngFor=" let historial of historial" style="display: block;"> {{historial}} </a>
+    </div>
+    <button id="hide" (click)="mostrarOcultarHistorial()">Ocultar historial</button>
+  </ng-template>
+  <button class="clean" (click)="limpiarHistorial()">Limpiar</button>
+</aside>

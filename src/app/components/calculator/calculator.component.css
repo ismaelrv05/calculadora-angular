@@ -1,11 +1,7 @@
-.calculator {
+.calculadora {
   background-color: rgb(22, 22, 24);
   color: #fff;
-  height: auto;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  margin-left: 30px;
   width: 250px;
   padding: 20px;
   border-radius: 15px;
@@ -64,4 +60,8 @@ button:active {
 #operator,
 #equal {
   background-color: rgb(235, 166, 40);
+}
+.contenido{
+  display: flex;
+  justify-content: space-around;
 }

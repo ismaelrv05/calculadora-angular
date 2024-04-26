@@ -1,22 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { CalculatorComponent } from './calculator/calculator.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { HistorialComponent } from './historial/historial.component';
+import { TablaComponent } from './tabla/tabla.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     CalculatorComponent,
-    SidebarComponent
+    SidebarComponent,
+    HistorialComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
