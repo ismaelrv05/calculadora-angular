@@ -1,0 +1,23 @@
+<div class="calculator">
+  <div class="screen" id="screen_res">{{ pantalla }}</div>
+
+  <button class="bt" id="delete" (click)="borrarPantalla()">C</button>
+  <button class="bt" id="delete_last" (click)="borrarUltimoCaracter()">←</button>
+  <button class="bt" value="%" (click)="agregarOperador('%')">%</button>
+  <button class="bt" id="operator" value="/" (click)="agregarOperador('/')">/</button>
+  <button class="bt" id="number" value="7" (click)="agregarNumero(7)">7</button>
+  <button class="bt" id="number" value="8" (click)="agregarNumero(8)">8</button>
+  <button class="bt" id="number" value="9" (click)="agregarNumero(9)">9</button>
+  <button class="bt" id="operator" value="*" (click)="agregarOperador('*')">*</button>
+  <button class="bt" id="number" value="6" (click)="agregarNumero(6)">6</button>
+  <button class="bt" id="number" value="5" (click)="agregarNumero(5)">5</button>
+  <button class="bt" id="number" value="4" (click)="agregarNumero(4)">4</button>
+  <button class="bt" id="operator" value="-" (click)="agregarOperador('-')">-</button>
+  <button class="bt" id="number" value="3" (click)="agregarNumero(3)">3</button>
+  <button class="bt" id="number" value="2" (click)="agregarNumero(2)">2</button>
+  <button class="bt" id="number" value="1" (click)="agregarNumero(1)">1</button>
+  <button class="bt" id="operator" value="+" (click)="agregarOperador('+')">+</button>
+  <button class="bt" id="cero" value="0" (click)="agregarNumero(0)">0</button>
+  <button class="bt" id="number" value="." (click)="agregarPunto()">.</button>
+  <button class="bt" id="equal" value="=" (click)="calcularResultado()">=</button>
+</div>
