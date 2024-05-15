@@ -1,6 +1,6 @@
 .aside-box {
   display: flex;
-  flex-direction: column; /* Organizar los elementos en columnas */
+  flex-direction: column;
   width: 250px;
   height: auto;
   background: white;
@@ -13,25 +13,38 @@
 
 .clean {
   background-color: #f39121;
+  margin-top: 5px;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 8px; /* Redondea las esquinas del botón */
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transición suave */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para el efecto 3D */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .clean:hover {
-  background-color: #f1a248;
-  transform: translateY(2px); /* Efecto de hundimiento al pasar el ratón */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Cambia la sombra para el efecto */
+  background-color: #ff3333;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .clean:active {
-  transform: translateY(4px); /* Aumenta el hundimiento al hacer clic */
-  box-shadow: none; /* Elimina la sombra al hacer clic */
+  transform: translateY(4px);
+  box-shadow: none;
 }
+
+.mostrar{
+  background-color: #b8b7b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 
 #result {
   background: gainsboro;

@@ -1,0 +1,23 @@
+<div class="mt-5">
+  <h2>Buscador de banderas</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <shared-search-box (onValue)="searchByCapital($event)" placeholder="Buscar país..."></shared-search-box>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <ul>
+        <a *ngFor="let flag of flags">
+
+          <img [src]="flag.flags.svg" [alt]="flag.name.common">
+          <p>{{ flag.name.common}}</p>
+
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>
