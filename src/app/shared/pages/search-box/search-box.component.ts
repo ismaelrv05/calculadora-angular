@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'shared-search-box',
@@ -13,7 +14,9 @@ export class SearchBoxComponent {
   @Output()
   public onValue = new EventEmitter<string>();
 
+  constructor(private translate: TranslateService) { }
   emitValue( value: string ): void {
+    const translatedValue = this.translate.instant(value);
     this.onValue.emit( value );
   }
 

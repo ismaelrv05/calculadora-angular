@@ -2,7 +2,7 @@
   <h2>Listado de tareas</h2>
   <mat-form-field appearance="outline">
     <mat-label>Nueva tarea...</mat-label>
-    <input matInput [(ngModel)]="newTaskName">
+    <input matInput [(ngModel)]="newTaskName" (keydown.enter)="addTask()">
   </mat-form-field>
   <button mat-button color="primary" matSuffix (click)="addTask()">Añadir</button>
 
