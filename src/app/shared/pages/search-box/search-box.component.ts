@@ -17,7 +17,7 @@ export class SearchBoxComponent {
   constructor(private translate: TranslateService) { }
   emitValue( value: string ): void {
     const translatedValue = this.translate.instant(value);
-    this.onValue.emit( value );
+    this.onValue.emit( translatedValue );
   }
 
 }

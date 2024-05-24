@@ -8,18 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateConfigModule } from './translate/translate.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateConfigModule
   ],
   providers: [
     provideAnimationsAsync()
