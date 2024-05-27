@@ -5,9 +5,9 @@ import { MaterialModule } from '../material/material.module';
 import { CalculatorRoutingModule } from './calculator-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
-import { AddTaskComponent } from './pages/add-tasks/add-tasks.component';
+import { AddTaskComponent } from './pages/tareas/add-tasks/add-tasks.component';
 import { CalculatorComponent } from './pages/calculator/calculator.component';
-import { HistorialComponent } from './pages/historial/historial.component';
+import { HistorialComponent } from './pages/calculator/historial/historial.component';
 import { SidebarComponent } from '../shared/pages/sidebar/sidebar.component';
 import { TablaComponent } from './pages/tabla/tabla.component';
 import { TareasComponent } from './pages/tareas/tareas.component';

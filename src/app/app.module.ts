@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { AppComponent } from './app.component';
@@ -8,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
-import { TranslateConfigModule } from './translate/translate.module';
 
 
 @NgModule({
@@ -21,10 +19,10 @@ import { TranslateConfigModule } from './translate/translate.module';
     SharedModule,
     MaterialModule,
     HttpClientModule,
-    TranslateConfigModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+
   ],
   bootstrap: [AppComponent]
 })

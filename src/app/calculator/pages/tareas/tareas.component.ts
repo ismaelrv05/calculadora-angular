@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Task } from '../../../interfaces/task.interfaces';
-import { TaskService } from '../../../services/task.service';
+import { DataService } from '../../../services/data.service';
 
 @Component({
   selector: 'app-tareas',
@@ -10,8 +10,8 @@ import { TaskService } from '../../../services/task.service';
 export class TareasComponent {
   tasks: Task[] = [];
 
-  constructor(private TaskService: TaskService) {
-    this.tasks = this.TaskService.getTasks();
+  constructor(private dataService: DataService) {
+    this.tasks = this.dataService.getTasks();
   }
 
   addTask(): void {
@@ -19,18 +19,18 @@ export class TareasComponent {
       description: ' ',
       completed: false
     };
-    this.TaskService.addTask(newTask);
-    this.tasks = this.TaskService.getTasks();
+    this.dataService.addTask(newTask);
+    this.tasks = this.dataService.getTasks();
   }
 
   toggleTaskStatus(index: number): void {
-    this.TaskService.toggleTaskStatus(index);
-    this.tasks = this.TaskService.getTasks();
+    this.dataService.toggleTaskStatus(index);
+    this.tasks = this.dataService.getTasks();
   }
 
   deleteTask(index: number): void {
-    this.TaskService.deleteTask(index);
-    this.tasks = this.TaskService.getTasks();
+    this.dataService.deleteTask(index);
+    this.tasks = this.dataService.getTasks();
   }
 }
 

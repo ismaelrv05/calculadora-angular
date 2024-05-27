@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Task } from '../../../interfaces/task.interfaces'
-import { TaskService } from '../../../services/task.service';
+import { Task } from '../../../../interfaces/task.interfaces'
+import { DataService } from '../../../../services/data.service';
 
 @Component({
   selector: 'app-add-tasks',
@@ -12,7 +12,7 @@ export class AddTaskComponent {
 
   @Output() taskAdded = new EventEmitter<Task>();
 
-  constructor(private taskService: TaskService) { }
+  constructor(private dataService: DataService) { }
 
   addTask(): void {
     if (this.newTaskName.trim() !== '') {
@@ -20,7 +20,7 @@ export class AddTaskComponent {
         description: this.newTaskName.trim(),
         completed: false
       };
-      this.taskService.addTask(newTask);
+      this.dataService.addTask(newTask);
       this.taskAdded.emit(newTask);
       this.newTaskName = '';
     }

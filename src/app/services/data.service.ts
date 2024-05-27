@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Flags } from '../interfaces/flags';
 import { Task } from '../interfaces/task.interfaces';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
+export class DataService {
+
+  private apiUrl: string = 'https://restcountries.com/v3.1';
   private tasksKey = 'tasks';
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+  searchCountry(term: string): Observable<Flags[]> {
+    const url = `${this.apiUrl}/name/${term}`;
+    return this.httpClient.get<Flags[]>(url);
+  }
 
   getTasks(): Task[] {
     const tasksString = localStorage.getItem(this.tasksKey);
@@ -35,4 +44,9 @@ export class TaskService {
     localStorage.setItem(this.tasksKey, JSON.stringify(tasks));
   }
 }
+
+
+
+
+
 
