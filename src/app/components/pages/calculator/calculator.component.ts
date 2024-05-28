@@ -10,8 +10,6 @@ export class CalculatorComponent {
     pantalla: string = '0';
     historial: string[] = [' '];
 
-
-
     agregarNumero(numero: number) {
         if (this.pantalla === '0' || this.pantalla === 'ERROR')
             this.pantalla = numero.toString();

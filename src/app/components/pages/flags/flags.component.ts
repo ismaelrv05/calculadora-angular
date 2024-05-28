@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Flags } from '../../../interfaces/flags';
 import { DataService } from '../../../services/data.service';
 
+
 @Component({
   selector: 'app-flags',
   templateUrl: './flags.component.html',

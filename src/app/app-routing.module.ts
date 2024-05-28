@@ -11,7 +11,7 @@ const routes: Routes = [
   canMatch: [PublicGuard]
   },
 
-  { path: 'calculator', loadChildren: () => import('./calculator/calculator.module').then(m => m.CalculatorModule),
+  { path: 'calculator', loadChildren: () => import('./components/calculator.module').then(m => m.CalculatorModule),
     canActivate: [AuthGuard],
     canMatch: [AuthGuard]},
   { path: '404', component: Error404PageComponent },
