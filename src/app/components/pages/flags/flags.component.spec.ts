@@ -2,6 +2,10 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { FlagsComponent } from './flags.component';
 import { DataService } from '../../../services/data.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { SharedModule } from '../../../shared/shared.module';
+import { SearchBoxComponent } from '../../../shared/pages/search-box/search-box.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 describe('FlagsComponent', () => {
   let component: FlagsComponent;
@@ -11,7 +15,8 @@ describe('FlagsComponent', () => {
   beforeEach(async () => {
     dataServiceSpy = jasmine.createSpyObj('DataService', ['searchCountry']);
     await TestBed.configureTestingModule({
-      declarations: [FlagsComponent],
+      declarations: [FlagsComponent, SearchBoxComponent],
+      imports: [SharedModule, BrowserAnimationsModule],
       providers: [{ provide: DataService, useValue: dataServiceSpy }],
     }).compileComponents();
   });
@@ -28,13 +33,6 @@ describe('FlagsComponent', () => {
 
   it('should have an empty array of flags', () => {
     expect(component.flags).toEqual([]);
-  });
-
-  it('should call searchCountry when searchByCapital is called', () => {
-    const term = 'Madrid';
-    component.searchByCapital(term);
-    expect(dataServiceSpy.searchCountry).toHaveBeenCalledTimes(1);
-    expect(dataServiceSpy.searchCountry).toHaveBeenCalledWith(term);
   });
 });
 

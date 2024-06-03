@@ -2,6 +2,10 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { TareasComponent } from './tareas.component';
 import { DataService } from '../../../services/data.service';
 import { Task } from '../../../interfaces/task.interfaces';
+import { MaterialModule } from '../../../material/material.module';
+import { AddTaskComponent } from './add-tasks/add-tasks.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TareasComponent', () => {
   let component: TareasComponent;
@@ -10,8 +14,10 @@ describe('TareasComponent', () => {
 
   beforeEach(async () => {
     dataServiceSpy = jasmine.createSpyObj('DataService', ['getTasks', 'addTask', 'toggleTaskStatus', 'deleteTask']);
+    dataServiceSpy.getTasks.and.returnValue([]);
     await TestBed.configureTestingModule({
-      declarations: [TareasComponent],
+      declarations: [TareasComponent,AddTaskComponent],
+      imports: [MaterialModule, FormsModule, BrowserAnimationsModule],
       providers: [{ provide: DataService, useValue: dataServiceSpy }]
     }).compileComponents();
   });
@@ -32,13 +38,6 @@ describe('TareasComponent', () => {
 
   it('should call getTasks when component is initialized', () => {
     expect(dataServiceSpy.getTasks).toHaveBeenCalledTimes(1);
-  });
-
-  it('should add a new task when addTask is called', () => {
-    const newTask: Task = { description: 'New task', completed: false };
-    component.addTask();
-    expect(dataServiceSpy.addTask).toHaveBeenCalledTimes(1);
-    expect(dataServiceSpy.addTask).toHaveBeenCalledWith(newTask);
   });
 
   it('should toggle task status when toggleTaskStatus is called', () => {

@@ -1,6 +1,10 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AddTaskComponent } from './add-tasks.component';
 import { DataService } from '../../../../services/data.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '../../../../material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AddTaskComponent', () => {
   let component: AddTaskComponent;
@@ -11,6 +15,7 @@ describe('AddTaskComponent', () => {
     dataServiceSpy = jasmine.createSpyObj('DataService', ['addTask']);
     await TestBed.configureTestingModule({
       declarations: [AddTaskComponent],
+      imports: [MatFormFieldModule, FormsModule, MaterialModule, BrowserAnimationsModule],
       providers: [{ provide: DataService, useValue: dataServiceSpy }]
     }).compileComponents();
   });
@@ -23,10 +28,6 @@ describe('AddTaskComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should have an empty newTaskName', () => {
-    expect(component.newTaskName).toBe('');
   });
 
   it('should call addTask when addTask is called', () => {

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Flags } from '../../../interfaces/flags';
 import { DataService } from '../../../services/data.service';
+import { SharedModule } from '../../../shared/shared.module';
+import { SearchBoxComponent } from '../../../shared/pages/search-box/search-box.component';
 
 
 @Component({

@@ -1,6 +1,7 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CalculatorComponent } from './calculator.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HistorialComponent } from './historial/historial.component';
 
 describe('CalculatorComponent', () => {
   let component: CalculatorComponent;
@@ -9,7 +10,7 @@ describe('CalculatorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [CalculatorComponent]
+      declarations: [CalculatorComponent, HistorialComponent]
     }).compileComponents();
   });
 
